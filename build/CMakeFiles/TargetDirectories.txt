@@ -1,3 +1,0 @@
-C:/Code/C++/voxpile/build/CMakeFiles/voxpile.dir
-C:/Code/C++/voxpile/build/CMakeFiles/edit_cache.dir
-C:/Code/C++/voxpile/build/CMakeFiles/rebuild_cache.dir
