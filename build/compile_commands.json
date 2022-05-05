@@ -1,0 +1,17 @@
+[
+{
+  "directory": "C:/Code/C++/voxpile/build",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe  @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\core\\window.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\core\\window.cpp",
+  "file": "C:/Code/C++/voxpile/src/core/window.cpp"
+},
+{
+  "directory": "C:/Code/C++/voxpile/build",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe  @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\main.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\main.cpp",
+  "file": "C:/Code/C++/voxpile/src/main.cpp"
+},
+{
+  "directory": "C:/Code/C++/voxpile/build",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\gcc.exe  @CMakeFiles/voxpile.dir/includes_C.rsp  -o CMakeFiles\\voxpile.dir\\src\\glad.c.obj -c C:\\Code\\C++\\voxpile\\src\\glad.c",
+  "file": "C:/Code/C++/voxpile/src/glad.c"
+}
+]
