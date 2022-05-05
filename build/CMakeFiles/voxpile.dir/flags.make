@@ -3,13 +3,13 @@
 
 # compile C with C:/ProgramData/chocolatey/bin/gcc.exe
 # compile CXX with C:/ProgramData/chocolatey/bin/g++.exe
-C_DEFINES = 
+C_DEFINES = -DENGINE_DIR=\"C:/Code/C++/voxpile/\"
 
 C_INCLUDES = @CMakeFiles/voxpile.dir/includes_C.rsp
 
 C_FLAGS = 
 
-CXX_DEFINES = 
+CXX_DEFINES = -DENGINE_DIR=\"C:/Code/C++/voxpile/\"
 
 CXX_INCLUDES = @CMakeFiles/voxpile.dir/includes_CXX.rsp
 

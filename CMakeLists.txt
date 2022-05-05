@@ -29,6 +29,9 @@ add_executable(${NAME} ${CPP_SOURCE_FILES} ${CPP_HEADER_FILES} ${C_SOURCE_FILES}
 
 # Compiler settings
 target_compile_features(${NAME} PUBLIC cxx_std_17)
+target_compile_definitions(${NAME} PRIVATE
+  ENGINE_DIR="${CMAKE_HOME_DIRECTORY}/"
+)
 
 # Include and link libraries
 target_include_directories(${NAME} PUBLIC

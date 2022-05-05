@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Code/C++/voxpile/src/glad.c" "CMakeFiles/voxpile.dir/src/glad.c.obj" "gcc" "CMakeFiles/voxpile.dir/src/glad.c.obj.d"
   "C:/Code/C++/voxpile/src/core/window.cpp" "CMakeFiles/voxpile.dir/src/core/window.cpp.obj" "gcc" "CMakeFiles/voxpile.dir/src/core/window.cpp.obj.d"
   "C:/Code/C++/voxpile/src/main.cpp" "CMakeFiles/voxpile.dir/src/main.cpp.obj" "gcc" "CMakeFiles/voxpile.dir/src/main.cpp.obj.d"
+  "C:/Code/C++/voxpile/src/rendering/shader.cpp" "CMakeFiles/voxpile.dir/src/rendering/shader.cpp.obj" "gcc" "CMakeFiles/voxpile.dir/src/rendering/shader.cpp.obj.d"
   )
 
 # Targets to which this target links.

@@ -1,17 +1,22 @@
 [
 {
   "directory": "C:/Code/C++/voxpile/build",
-  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe  @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\core\\window.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\core\\window.cpp",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe -DENGINE_DIR=\\\"C:/Code/C++/voxpile/\\\" @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\core\\window.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\core\\window.cpp",
   "file": "C:/Code/C++/voxpile/src/core/window.cpp"
 },
 {
   "directory": "C:/Code/C++/voxpile/build",
-  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe  @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\main.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\main.cpp",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe -DENGINE_DIR=\\\"C:/Code/C++/voxpile/\\\" @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\main.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\main.cpp",
   "file": "C:/Code/C++/voxpile/src/main.cpp"
 },
 {
   "directory": "C:/Code/C++/voxpile/build",
-  "command": "C:\\ProgramData\\chocolatey\\bin\\gcc.exe  @CMakeFiles/voxpile.dir/includes_C.rsp  -o CMakeFiles\\voxpile.dir\\src\\glad.c.obj -c C:\\Code\\C++\\voxpile\\src\\glad.c",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe -DENGINE_DIR=\\\"C:/Code/C++/voxpile/\\\" @CMakeFiles/voxpile.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\voxpile.dir\\src\\rendering\\shader.cpp.obj -c C:\\Code\\C++\\voxpile\\src\\rendering\\shader.cpp",
+  "file": "C:/Code/C++/voxpile/src/rendering/shader.cpp"
+},
+{
+  "directory": "C:/Code/C++/voxpile/build",
+  "command": "C:\\ProgramData\\chocolatey\\bin\\gcc.exe -DENGINE_DIR=\\\"C:/Code/C++/voxpile/\\\" @CMakeFiles/voxpile.dir/includes_C.rsp  -o CMakeFiles\\voxpile.dir\\src\\glad.c.obj -c C:\\Code\\C++\\voxpile\\src\\glad.c",
   "file": "C:/Code/C++/voxpile/src/glad.c"
 }
 ]

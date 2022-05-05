@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/voxpile.dir/src/glad.c.obj.d"
   "CMakeFiles/voxpile.dir/src/main.cpp.obj"
   "CMakeFiles/voxpile.dir/src/main.cpp.obj.d"
+  "CMakeFiles/voxpile.dir/src/rendering/shader.cpp.obj"
+  "CMakeFiles/voxpile.dir/src/rendering/shader.cpp.obj.d"
   "libvoxpile.dll.a"
   "voxpile.exe"
   "voxpile.exe.manifest"

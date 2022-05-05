@@ -200,6 +200,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\voxpile.dir\build.make CMakeFiles/voxpile.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/rendering/shader.obj: src/rendering/shader.cpp.obj
+.PHONY : src/rendering/shader.obj
+
+# target to build an object file
+src/rendering/shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\voxpile.dir\build.make CMakeFiles/voxpile.dir/src/rendering/shader.cpp.obj
+.PHONY : src/rendering/shader.cpp.obj
+
+src/rendering/shader.i: src/rendering/shader.cpp.i
+.PHONY : src/rendering/shader.i
+
+# target to preprocess a source file
+src/rendering/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\voxpile.dir\build.make CMakeFiles/voxpile.dir/src/rendering/shader.cpp.i
+.PHONY : src/rendering/shader.cpp.i
+
+src/rendering/shader.s: src/rendering/shader.cpp.s
+.PHONY : src/rendering/shader.s
+
+# target to generate assembly for a file
+src/rendering/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\voxpile.dir\build.make CMakeFiles/voxpile.dir/src/rendering/shader.cpp.s
+.PHONY : src/rendering/shader.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -218,6 +242,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/rendering/shader.obj
+	@echo ... src/rendering/shader.i
+	@echo ... src/rendering/shader.s
 .PHONY : help
 
 
