@@ -5,35 +5,8 @@
 #include <glad/glad.h>
 
 void Shader::loadShader(const std::string& vertexPath, const std::string& fragmentPath) {
-  // 1. retrieve the vertex/fragment source code from filePath
-  std::string vertexCode;
-  std::string fragmentCode;
-  std::ifstream vShaderFile;
-  std::ifstream fShaderFile;
-
-  // ensure ifstream objects can throw exceptions:
-  vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-  fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-  try 
-  {
-    // open files
-    vShaderFile.open(ENGINE_DIR + vertexPath);
-    fShaderFile.open(ENGINE_DIR + fragmentPath);
-    std::stringstream vShaderStream, fShaderStream;
-    // read file's buffer contents into streams
-    vShaderStream << vShaderFile.rdbuf();
-    fShaderStream << fShaderFile.rdbuf();   
-    // close file handlers
-    vShaderFile.close();
-    fShaderFile.close();
-    // convert stream into string
-    vertexCode   = vShaderStream.str();
-    fragmentCode = fShaderStream.str();   
-  }
-  catch(std::ifstream::failure e)
-  {
-    std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
-  }
+  std::string vertexCode = parseShader(vertexPath);
+  std::string fragmentCode = parseShader(fragmentPath);
 
   const char* vShaderCode = vertexCode.c_str();
   const char* fShaderCode = fragmentCode.c_str();
@@ -86,5 +59,26 @@ void Shader::loadShader(const std::string& vertexPath, const std::string& fragme
 
 void Shader::use() {
   glUseProgram(m_ID);
+}
+
+std::string Shader::parseShader(const std::string& path) {
+  std::ifstream shaderFile;
+  shaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+  try 
+  {
+    // open files
+    shaderFile.open(ENGINE_DIR + path);
+    std::stringstream shaderStream;
+    shaderStream << shaderFile.rdbuf(); // read into string stream
+    shaderFile.close();
+
+    return shaderStream.str();
+  }
+  catch(std::ifstream::failure e)
+  {
+    std::cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << std::endl;
+  }
+
+  return "";
 }
 

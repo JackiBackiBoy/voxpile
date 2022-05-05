@@ -11,11 +11,8 @@ class Shader {
     void loadShader(const std::string& vertexPath, const std::string& fragmentPath);
     void use();
 
-    inline std::vector<char>& getVertexShaderCode() { return m_VertexShaderCode; }
-    inline std::vector<char>& getFragmentShaderCode() { return m_FragmentShaderCode; }
-
   private:
+    std::string parseShader(const std::string& path);
+
     unsigned int m_ID;
-    std::vector<char> m_VertexShaderCode;
-    std::vector<char> m_FragmentShaderCode;
 };
