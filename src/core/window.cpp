@@ -2,6 +2,10 @@
 #include <stdexcept>
 #include <iostream>
 #include "rendering/shader.hpp"
+#include "rendering/bufferLayout.hpp"
+#include "rendering/vertexArray.hpp"
+#include "rendering/vertexBuffer.hpp"
+#include "rendering/indexBuffer.hpp"
 
 Window::~Window() {
   glfwDestroyWindow(m_RawWindow);
@@ -35,26 +39,38 @@ void Window::initialize() {
 }
 
 void Window::run() {
-  float vertices[] = {
-    -0.5f, -0.5f, 0.0f,
-     0.5f, -0.5f, 0.0f,
-     0.0f,  0.5f, 0.0f
+  std::vector<float> vertices = {
+     0.5f,  0.5f, 0.0f, // top right
+     0.5f, -0.5f, 0.0f,  // bottom right
+    -0.5f, -0.5f, 0.0f,  // bottom left
+    -0.5f,  0.5f, 0.0f   // top left 
   };
 
-  unsigned int VAO, VBO;
-  glGenVertexArrays(1, &VAO);
-  glGenBuffers(1, &VBO);
-  glBindVertexArray(VAO);
+  std::vector<unsigned int> indices = {  // note that we start from 0!
+    0, 1, 3,   // first triangle
+    1, 2, 3    // second triangle
+  };
 
-  glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-  // Vertex attributes
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); // positions
-  glEnableVertexAttribArray(0);
+  VertexArray vao;
+  vao.create();
+  vao.bind();
 
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
+  VertexBuffer vbo(vertices, GL_STATIC_DRAW);
+  vbo.create();
+
+  IndexBuffer ibo(indices, GL_STATIC_DRAW);
+  ibo.create();
+
+  BufferLayout layout;
+  layout.addElement<float>("position", 3);
+
+  vao.compileBufferLayout(layout);
+
+  vbo.unbind();
+  vao.unbind();
+
+
 
   Shader shader;
   shader.loadShader("assets/shaders/lightingShader.vert", "assets/shaders/lightingShader.frag");
@@ -67,8 +83,9 @@ void Window::run() {
     glClear(GL_COLOR_BUFFER_BIT);
 
     shader.use();
-    glBindVertexArray(VAO);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    vao.bind();
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    vao.unbind();
 
     glfwSwapBuffers(m_RawWindow);
     glfwPollEvents();    
